@@ -24,7 +24,7 @@ public class GameOfColonies extends JPanel implements ActionListener {
     private int livingCells = 0; // Counter for total living cells
 
     private JButton exitButton;
-	private JButton resetButton;
+    private JButton resetButton;
 
 
     public GameOfColonies() {
@@ -38,17 +38,19 @@ public class GameOfColonies extends JPanel implements ActionListener {
         exitButton.addActionListener(e -> System.exit(0));
         setLayout(new BorderLayout());
         add(exitButton, BorderLayout.SOUTH);
-		
-		resetButton = new JButton("Reset");
+
+        resetButton = new JButton("Reset");
         resetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 resetGame();
             }
         });
-        add(resetButton, BorderLayout.SOUTH);   
+        add(resetButton, BorderLayout.SOUTH);
 
     }
+
+
 
     private void resetGame() {
         generations = 0;
@@ -63,7 +65,7 @@ public class GameOfColonies extends JPanel implements ActionListener {
         repaint();
     }
 
-    }
+
 
     private void initializeColonies() {
         for (int i = 0; i < INITIAL_COLONIES; i++) {
